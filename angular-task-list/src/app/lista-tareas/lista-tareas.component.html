@@ -1,0 +1,36 @@
+
+
+<div class="container	content">
+	<div class="row">
+		<div class="col-md-6	offset-md-3">
+			<span class="anchor"	id="formLogin"></span>
+			<!-- form	card	login	with	validation	feedback	-->
+			<div class="card card-outline-secondary">
+				<div class="card-header text-center">
+					<h3	class="mb-0">Tareas pendiente de Julio</h3>
+				</div>
+				<div class="card-body">
+					<form>
+						<div class="form-group">
+							<label for="descripcion">Descripcion</label>
+							<input type="text"	class="form-control" id="descripcion" placeholder="Descripcion" #descripcion>
+						</div>
+						<div class="form-group">
+							<label for="fecha">Fecha</label>
+							<input type="date"	class="form-control" id="fecha"	placeholder="Fecha" #fecha>
+						</div>
+						<div class="text-center">
+							<button type="submit" class="btn btn-primary" (click)="guardarTarea(descripcion.value,fecha.value)">Guardar</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<hr	class="mb-5">
+	<div class="row">
+		<ul>
+			<app-tarea *ngFor="let tarea of listaTareas" [tarea]="tarea"></app-tarea>
+		</ul>
+	</div>
+</div>
